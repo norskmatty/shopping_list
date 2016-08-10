@@ -1,11 +1,16 @@
 language: node_js
 node_js: node
-services: 
+services:
 - mongodb
 addons:
-    apt:
-        sources:
-        - mongodb-3.2-precise
-        packages:
-        - mongodb-org-server
-        
+  apt:
+    sources:
+    - mongodb-3.2-precise
+    packages:
+    - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key: 02d22a1e-16ed-4bae-afb0-844c7b25ef97
+  app: nameless-retreat-55861
+  on:
+    repo: norskmatty/shopping_list
